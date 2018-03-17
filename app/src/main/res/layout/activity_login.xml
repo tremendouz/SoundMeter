@@ -48,7 +48,6 @@
             android:id="@+id/input_layout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/input_layout_email"
             android:layout_marginTop="4dp">
 
             <EditText
@@ -76,7 +75,7 @@
             android:textColor="@color/colorLoginText"
             android:text="@string/btn_password_forget"
             android:textAllCaps="false"
-            android:textSize="10sp" />
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/button_registration"

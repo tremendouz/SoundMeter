@@ -10,4 +10,5 @@
     <string name="btn_link_to_register">Don\'t Have an Account?</string>
     <string name="text_login">Welcome</string>
     <string name="text_registration">Create new account</string>
+    <string name="error_input_email">Invalid email address</string>
 </resources>
