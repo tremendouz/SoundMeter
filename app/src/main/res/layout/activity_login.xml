@@ -28,9 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.5"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:orientation="vertical">
 
-        <TextInputLayout
+        <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -42,9 +44,9 @@
                 android:inputType="textEmailAddress"
                 android:hint="@string/hint_email"/>
 
-        </TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
 
-        <TextInputLayout
+        <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,13 +59,15 @@
                 android:inputType="textPassword"
                 android:hint="@string/hint_password"/>
 
-        </TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/button_login"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:background="@color/colorPrimary"
             android:text='@string/btn_login'/>
 
         <Button

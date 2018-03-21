@@ -1,24 +1,29 @@
 package com.example.dawid.soundmeter
 
+import android.content.Intent
 import android.graphics.Color
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TextInputLayout
+import android.support.v7.app.AppCompatActivity
+import android.util.Log
+import android.util.Patterns.EMAIL_ADDRESS
 import android.widget.Button
 import android.widget.EditText
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.functions.BiFunction
-import io.reactivex.internal.operators.observable.ObservableCombineLatest
-import java.util.concurrent.TimeUnit
-import android.util.Patterns.EMAIL_ADDRESS
 import io.reactivex.functions.Function3
+import java.util.concurrent.TimeUnit
+
 
 class RegistrationActivity : AppCompatActivity() {
+
+    val TAG = RegistrationActivity::class.java.simpleName
 
     lateinit var btnRegister: Button
     lateinit var textEmail: EditText
@@ -30,11 +35,24 @@ class RegistrationActivity : AppCompatActivity() {
 
     var debounceTime = 0L
 
-    //val firebaseAuth = FirebaseAuth.getInstance()
+    lateinit var firebaseAuth: FirebaseAuth
+    lateinit var fireDB: FirebaseDatabase
+    lateinit var fireRef: DatabaseReference
+
+    val USER_TABLE = "user"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        fireDB = FirebaseDatabase.getInstance()
+        fireRef = fireDB.getReference(USER_TABLE)
+
+
+        //val check_x = firebaseAuth.currentUser != null
+        //Log.d(TAG, "Elo ${check_x}")
 
         btnRegister = findViewById(R.id.button_register)
         textEmail = findViewById(R.id.text_email)
@@ -43,8 +61,12 @@ class RegistrationActivity : AppCompatActivity() {
         inputEmail = findViewById(R.id.input_layout_reg_email)
         inputPassword = findViewById(R.id.input_layout_reg_password)
         inputConfirmPassword = findViewById(R.id.input_layout_confirm_password)
-        btnRegister.isEnabled = false
 
+
+        btnRegister.setOnClickListener {
+            registerUser(textEmail.text.toString(), textPassword.text.toString())
+        }
+        btnRegister.isEnabled = false
 
 
         val emailObservable = RxTextView.textChanges(textEmail)
@@ -125,16 +147,20 @@ class RegistrationActivity : AppCompatActivity() {
         }
     }
 
-    /*fun registerUser(email: String, password: String) {
-        this.firebaseAuth.createUserWithEmailAndPassword(email, password)
+    fun registerUser(email: String, password: String) {
+        firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task: Task<AuthResult> ->
                     if (task.isSuccessful) {
-                        print("Success")
+                        Log.d(TAG, "createUserWithEmail:success")
+                        val user = firebaseAuth.currentUser
+                        fireRef.child(user?.uid).setValue("Dawid")
+
+                        val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
+                        startActivity(intent)
                     } else {
-                        print("Error")
+                        Log.w(TAG, "createUserWithEmail:failure")
                     }
                 }
     }
-*/
 
 }
