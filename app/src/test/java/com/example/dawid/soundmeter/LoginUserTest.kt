@@ -11,7 +11,6 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.Shadows
 import org.robolectric.annotation.Config
-import java.net.PasswordAuthentication
 
 /**
  * Created by daza on 20.03.18.
@@ -59,6 +58,7 @@ class LoginUserTest {
         val expectedIntent = Intent(activity, LoginActivity::class.java)
         Assert.assertEquals(expectedIntent.component, actualIntent.component)
     }
+
 
     fun fillForm(email: String, password: String){
         val emailText = activity.findViewById<EditText>(R.id.text_email).setText(email)

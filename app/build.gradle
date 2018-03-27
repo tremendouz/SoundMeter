@@ -11,7 +11,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.dawid.soundmeter"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -29,6 +29,7 @@ android {
         }
     }
 }
+ext.playServicesVersion = '12.0.0'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -37,27 +38,29 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.android.support:design:26.1.0'
     // SmartLock
-    implementation 'com.google.android.gms:play-services-auth:11.8.0'
+    implementation "com.google.android.gms:play-services-auth:$playServicesVersion"
     // Dagger2
     implementation 'com.google.dagger:dagger-android:2.15'
     implementation 'com.google.dagger:dagger-android-support:2.15'
     kapt 'com.google.dagger:dagger-compiler:2.15'
     kapt 'com.google.dagger:dagger-android-processor:2.15'
     // Firebase
-    implementation 'com.google.firebase:firebase-auth:11.8.0'
+    implementation 'com.google.firebase:firebase-auth:12.0.0'
     implementation 'com.firebaseui:firebase-ui-auth:3.2.2'
-    implementation 'com.google.firebase:firebase-database:11.8.0'
+    implementation 'com.google.firebase:firebase-database:12.0.0'
     // RxAndroid
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
     // RxJava
     implementation 'io.reactivex.rxjava2:rxjava:2.1.10'
     // Architecture Components
-    implementation 'android.arch.lifecycle:extensions:1.1.0'
-    implementation 'android.arch.lifecycle:reactivestreams:1.1.0'
-    kapt 'android.arch.lifecycle:compiler:1.1.0'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'android.arch.lifecycle:reactivestreams:1.1.1'
+    kapt 'android.arch.lifecycle:compiler:1.1.1'
     // Google Maps
-    implementation 'com.google.android.gms:play-services-maps:11.8.0'
+    implementation "com.google.android.gms:play-services-maps:$playServicesVersion"
+0    // Location
+    implementation "com.google.android.gms:play-services-location:$playServicesVersion"
     // Tests
     implementation 'com.android.support.test.espresso.idling:idling-concurrent:3.0.1'
     testImplementation 'junit:junit:4.12'
@@ -66,7 +69,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-intents:3.0.1'
-
 
 
 }

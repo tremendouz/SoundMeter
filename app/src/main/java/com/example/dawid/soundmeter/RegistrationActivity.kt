@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Function3
 import java.util.concurrent.TimeUnit
 
@@ -39,6 +40,8 @@ class RegistrationActivity : AppCompatActivity() {
     lateinit var fireDB: FirebaseDatabase
     lateinit var fireRef: DatabaseReference
 
+    lateinit var buttonDisposable: Disposable
+
     val USER_TABLE = "user"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,9 +53,6 @@ class RegistrationActivity : AppCompatActivity() {
         fireDB = FirebaseDatabase.getInstance()
         fireRef = fireDB.getReference(USER_TABLE)
 
-
-        //val check_x = firebaseAuth.currentUser != null
-        //Log.d(TAG, "Elo ${check_x}")
 
         btnRegister = findViewById(R.id.button_register)
         textEmail = findViewById(R.id.text_email)
@@ -95,9 +95,7 @@ class RegistrationActivity : AppCompatActivity() {
                             isValidPassword(pass.toString()) &&
                             isValidConfirmPassword(conf.toString())
                 })
-        combinedObservable.subscribe { isValid -> isValidForm(isValid) }
-
-
+        combinedObservable.subscribe { isValid: Boolean -> isValidForm(isValid) }
     }
 
 
