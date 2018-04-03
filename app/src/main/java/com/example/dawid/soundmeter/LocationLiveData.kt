@@ -11,7 +11,7 @@ import com.google.android.gms.location.*
 /**
  * Created by daza on 24.03.18.
  */
-class MyLocationListener(val context: Context) : LiveData<Location>() {
+class LocationLiveData(val context: Context) : LiveData<Location>() {
     lateinit var fusedLocationClient: FusedLocationProviderClient
     val locationRequest by lazy { LocationRequest.create() }
 
