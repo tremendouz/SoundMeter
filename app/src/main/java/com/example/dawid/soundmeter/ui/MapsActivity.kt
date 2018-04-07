@@ -1,7 +1,8 @@
-package com.example.dawid.soundmeter
+package com.example.dawid.soundmeter.ui
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.example.dawid.soundmeter.R
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback

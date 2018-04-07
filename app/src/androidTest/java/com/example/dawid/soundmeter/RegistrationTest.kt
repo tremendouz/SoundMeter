@@ -17,6 +17,7 @@ import android.support.test.runner.AndroidJUnit4
 import android.support.test.runner.lifecycle.ActivityLifecycleMonitorRegistry
 import android.support.test.runner.lifecycle.Stage
 import android.view.View
+import com.example.dawid.soundmeter.ui.RegistrationActivity
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.not

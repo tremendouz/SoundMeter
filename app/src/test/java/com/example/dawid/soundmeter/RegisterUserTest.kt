@@ -3,6 +3,7 @@ package com.example.dawid.soundmeter
 import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
+import com.example.dawid.soundmeter.ui.RegistrationActivity
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Test

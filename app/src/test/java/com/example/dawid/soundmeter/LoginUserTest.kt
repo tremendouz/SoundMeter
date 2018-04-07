@@ -3,6 +3,8 @@ package com.example.dawid.soundmeter
 import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
+import com.example.dawid.soundmeter.ui.LoginActivity
+import com.example.dawid.soundmeter.ui.RegistrationActivity
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith

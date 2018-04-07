@@ -11,7 +11,6 @@ import javax.inject.Inject
 import android.Manifest
 
 
-
 class MainActivity : AppCompatActivity() {
     @Inject lateinit var context: Context
 

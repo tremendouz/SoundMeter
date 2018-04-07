@@ -1,4 +1,4 @@
-package com.example.dawid.soundmeter
+package com.example.dawid.soundmeter.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.util.Log
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
+import com.example.dawid.soundmeter.MainActivity
+import com.example.dawid.soundmeter.R
 import com.example.dawid.soundmeter.utils.toast
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult

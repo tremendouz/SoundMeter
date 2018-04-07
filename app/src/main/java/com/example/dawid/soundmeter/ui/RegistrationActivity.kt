@@ -1,4 +1,4 @@
-package com.example.dawid.soundmeter
+package com.example.dawid.soundmeter.ui
 
 import android.content.Intent
 import android.graphics.Color
@@ -9,6 +9,8 @@ import android.util.Log
 import android.util.Patterns.EMAIL_ADDRESS
 import android.widget.Button
 import android.widget.EditText
+import com.example.dawid.soundmeter.MainActivity
+import com.example.dawid.soundmeter.R
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth

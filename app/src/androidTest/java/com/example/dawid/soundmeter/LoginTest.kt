@@ -8,6 +8,7 @@ import android.support.test.espresso.intent.rule.IntentsTestRule
 import android.support.test.espresso.matcher.ViewMatchers.withId
 import android.support.test.filters.LargeTest
 import android.support.test.runner.AndroidJUnit4
+import com.example.dawid.soundmeter.ui.LoginActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

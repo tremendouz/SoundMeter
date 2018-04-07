@@ -5,4 +5,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.dawid.soundmeter.LocationActivity">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/elo_button"
+        android:text="ELO"/>
+
 </android.support.constraint.ConstraintLayout>
